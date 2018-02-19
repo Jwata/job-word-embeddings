@@ -7,6 +7,7 @@ certifi==2018.1.18
 cffi==1.11.4
 chardet==3.0.4
 cryptography==2.1.4
+cycler==0.10.0
 decorator==4.2.1
 entrypoints==0.2.3
 gensim==3.1.0
@@ -24,6 +25,7 @@ jupyter-client==5.2.2
 jupyter-console==5.2.0
 jupyter-core==4.4.0
 MarkupSafe==1.0
+matplotlib==2.1.2
 mecab-python3==0.7
 mistune==0.8.3
 nbconvert==5.3.1
@@ -40,12 +42,14 @@ ptyprocess==0.5.2
 pycparser==2.18
 Pygments==2.2.0
 pyOpenSSL==17.5.0
+pyparsing==2.2.0
 PySocks==1.6.7
 python-dateutil==2.6.1
 pytz==2017.3
 pyzmq==16.0.3
 qtconsole==4.3.1
 requests==2.18.4
+scikit-learn==0.19.1
 scipy==1.0.0
 Send2Trash==1.4.2
 simplegeneric==0.8.1
