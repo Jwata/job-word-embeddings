@@ -44,24 +44,15 @@ brew install mecab mecab-ipadic
 Neologism dictionary
 
 ```
-git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git
-cd mecab-ipadic-neologd
-./bin/install-mecab-ipadic-neologd -n -a
-```
-
-or
-
-```
 brew tap denvazh/tap
-brew install mecab-ipadic --HEAD
+brew install mecab-ipadic-neologd --HEAD --with-install_all_seed_files
 ```
-
 
 confirm if it tokenizes neologisms properly. (be sure where your dictionary is)
 
 ```
 echo "SMAPの中居正広" | \
-mecab -U %m -F "%f[6]\s" -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd
+mecab -U %m -F "%f[6]\s" -d /usr/local/opt/mecab-ipadic-neologd
 => SMAP の 中居正広 EOS
 ```
 
