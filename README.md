@@ -35,24 +35,38 @@ pip install -r requirements.txt
 ```
 
 ### Install other dependencies
-Install Japanese tokenizer and dictionary
+Japanese tokenizer
 
 ```
 brew install mecab mecab-ipadic
+```
 
+Neologism dictionary
+
+```
 git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git
 cd mecab-ipadic-neologd
 ./bin/install-mecab-ipadic-neologd -n -a
 ```
 
-check if it tokenize proper nouns
+or
 
 ```
-echo "SMAPの中居正広" | mecab -U %m -F "%f[6]\s" -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd
+brew tap denvazh/tap
+brew install mecab-ipadic --HEAD
+```
+
+
+confirm if it tokenizes neologisms properly. (be sure where your dictionary is)
+
+```
+echo "SMAPの中居正広" | \
+mecab -U %m -F "%f[6]\s" -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd
 => SMAP の 中居正広 EOS
 ```
 
 ## Open notebook
+
 ```
 jupyter notebook Job\ word\ embeddings.ipynb
 
