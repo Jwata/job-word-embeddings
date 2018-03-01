@@ -1,0 +1,34 @@
+{
+  "settings": {
+    "index" : {
+      "analysis" : {
+        "analyzer" : {
+          "synonym" : {
+            "tokenizer": "whitespace",
+            "filter" : ["synonym"]
+          }
+        },
+        "filter" : {
+          "synonym" : {
+            "type" : "synonym",
+            "synonyms_path" : "analysis/synonym.txt"
+          }
+        }
+      }
+    }
+  },
+  "mappings": {
+    "_doc": {
+      "dynamic_templates": [{
+        "texts": {
+          "match_mapping_type": "string",
+          "mapping": {
+            "type": "text",
+            "analyzer": "kuromoji",
+            "search_analyzer": "synonym"
+          }
+        }
+      }]
+    }
+  }
+}

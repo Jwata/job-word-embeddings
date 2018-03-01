@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "_doc": {
+      "dynamic_templates": [{
+        "texts": {
+          "match_mapping_type": "string",
+          "mapping": {
+            "type": "text",
+            "analyzer": "kuromoji",
+            "search_analyzer": "kuromoji"
+          }
+        }
+      }]
+    }
+  }
+}

@@ -73,3 +73,19 @@ This is sample lines of the synonym file
 機械学習エンジニア=>機械 学習 エンジニア,エンジニア,開発 エンジニア,データ 分析 エンジニア,線形 代数,データ エンジニア
 ...
 ```
+
+### Create Elasticsearch index
+You need to create ES index and set custom mapping to use [synonym token filter](https://www.elastic.co/guide/en/elasticsearch/reference/master/analysis-synonym-tokenfilter.html) at query timing.
+
+For demonstration, I prepared 2 mappings. One is for normal search and the other is for semantic search. (these mappings are valid for elasticsearch v6.2.2).
+
+```sh
+# apply normal search mapping to the index "job_postings"
+curl -XPUT -H "Content-Type: application/json" \
+  localhost:9200/job_postings -d @jp_mapping.json
+
+# apply semantic search mapping to the index "job_postings_semantic"
+curl -XPUT -H "Content-Type: application/json" \
+  localhost:9200/job_postings_semantic -d @jp_semantic_mapping.json
+```
+
