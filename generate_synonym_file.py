@@ -9,7 +9,7 @@ def tokenize(text):
 
 model = Word2Vec.load('job_word_embeddings.model')
 
-with open('synonym.txt', 'w') as f:
+with open('data/synonym.txt', 'w') as f:
     for word in model.wv.index2word:
         similar_words = [tokenize(word)]
         for w, _ in model.most_similar(word, topn=5):
