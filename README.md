@@ -49,6 +49,44 @@ word2vec_model.most_similar('Ruby')
  ('clojure', 0.8259769082069397)]
 ```
 
+You can also give multiple skills to the trined model. those skills can be your current skill set.  
+And then you will get similar job titles and skills with yourself.
+
+```python
+postive_skills = ['webエンジニア', 'ruby', 'redis', 'postgresql', '機械学習', 'deep learning', 'html', 'css', 'javascript']
+word2vec_model.most_similar(positive=postive_skills)
+
+=> [('webフロントエンドエンジニア', 0.8989949226379395),
+  ('elixir', 0.8973215222358704),
+  ('ll言語', 0.8954563736915588),
+  ('web・アプリエンジニア', 0.8946321606636047),
+  ('script', 0.894004225730896),
+  ('web エンジニア', 0.893429696559906),
+  ('phoenix', 0.8932678699493408),
+  ('プロダクト開発エンジニア', 0.8929529190063477),
+  ('スクレイピング', 0.8926692008972168),
+  ('webサービス開発エンジニア', 0.8926246166229248)]
+```
+
+You can spacify negative skills. And you will get job titles and skills which may be intesteding to you.
+
+```python
+postive_skills = ['webエンジニア', 'ruby', 'redis', 'postgresql', '機械学習', 'deep learning']
+negative_skills = ['html', 'css', 'javascript']
+word2vec_model.most_similar(positive=postive_skills, negative=negative_skills)
+
+=> [('数理モデル', 0.7106159329414368),
+  ('chainer', 0.6900843381881714),
+  ('lucene', 0.689948320388794),
+  ('音声合成', 0.6863459348678589),
+  ('hbase', 0.6846038699150085),
+  ('python', 0.6761983036994934),
+  ('hive', 0.6735614538192749),
+  ('データセット', 0.6731375455856323),
+  ('分散データベース', 0.6727677583694458),
+  ('erlang', 0.6702989935874939)]
+```
+
 ### Visualization
 ![](./assets/tsne_visualization.png)
 
