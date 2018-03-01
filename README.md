@@ -89,3 +89,20 @@ curl -XPUT -H "Content-Type: application/json" \
   localhost:9200/job_postings_semantic -d @jp_semantic_mapping.json
 ```
 
+### Insert job postings
+```python
+# insert job postings to the normal serarch index
+python insert_jobs_to_es.py job_postings
+
+# insert job postings to the semantic serarch index
+python insert_jobs_to_es.py job_postings_semantic
+```
+
+### Result
+Let's compare the results of those 2 settings.
+
+|Normal Search|Semantic|
+|---|---|
+|![](./assets/normal_search_result.png)|![](./assets/semantic_search_result.png)|
+
+As you can see, you get more results from the semantic search because it finds job postings that contain similar words, such as `機械学習`, `統計的` for `データサイエンティスト` in the above example.
