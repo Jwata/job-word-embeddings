@@ -6,7 +6,7 @@ bz2file==0.98
 certifi==2018.1.18
 cffi==1.11.4
 chardet==3.0.4
-cryptography==3.2
+cryptography==3.3.2
 cycler==0.10.0
 decorator==4.2.1
 elasticsearch==6.1.1
