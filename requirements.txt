@@ -31,7 +31,7 @@ mecab-python3==0.7
 mistune==0.8.3
 nbconvert==5.3.1
 nbformat==4.4.0
-notebook==6.1.5
+notebook==6.4.12
 numpy==1.14.0
 pandas==0.22.0
 pandocfilters==1.4.2
